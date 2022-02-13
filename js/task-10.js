@@ -14,6 +14,8 @@ let buttonDestroy = document.querySelector(`button[data-destroy]`);
   //   return test;
   //   // return document.querySelector('input').value;  
   // });
+  const input = document.querySelector('input');
+    console.log(input.value);
 
  buttonCreate.addEventListener('click', () => {
    let amount = divEl.value;   
@@ -23,11 +25,11 @@ let buttonDestroy = document.querySelector(`button[data-destroy]`);
 function createBoxes(amount) {
   console.log(findBoxEl);
     let array = []; 
-  for(let i = 0; i < amount; i++) {
+  for(let i = 0; i < amount; i+=1) {
     findBoxEl.style.width = '30';
     // clone.style.height = '30';
      array = findBoxEl;
    }
    console.log(array);
-   document.querySelector(`body.append(array)`);
+   
 }

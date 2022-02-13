@@ -13,7 +13,7 @@ const ingredientsItemsEl = ingredients.forEach((i) => {
   const itemEl = document.createElement(`li`);
   itemEl.classList.add('item');
   itemEl.appendChild(document.createTextNode(i));
-  ul.appendChild(itemEl);
 });
-
+const itemEl = ingredientsItemsEl;
+ul.appendChild(itemEl);
 

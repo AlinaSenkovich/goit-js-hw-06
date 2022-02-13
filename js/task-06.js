@@ -6,13 +6,14 @@
 //Для добавления стилей, используй CSS-классы valid и invalid, которые мы уже добавили в исходные файлы задания.
 
 const input = document.querySelector(`#validation-input`);
-console.log(input);
 input.addEventListener('blur', onInputBlur);
-
+const constValue = 6;
 function onInputBlur (event){
     this.classList.add('invalid');
-    if (event.currentTarget.value.length == event.currentTarget.dataset.length){
+    if (event.currentTarget.value.length === constValue) {
         this.classList.add('valid');
         this.classList.remove('invalid');
+    } else {
+        this.classList.add('invalid');
     }
 }
