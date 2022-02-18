@@ -5,15 +5,21 @@
 //если неправильное - красным.
 //Для добавления стилей, используй CSS-классы valid и invalid, которые мы уже добавили в исходные файлы задания.
 
-const input = document.querySelector(`#validation-input`);
-input.addEventListener('blur', onInputBlur);
-const constValue = 6;
-function onInputBlur (event){
-    this.classList.add('invalid');
-    if (event.currentTarget.value.length === constValue) {
-        this.classList.add('valid');
-        this.classList.remove('invalid');
-    } else {
-        this.classList.add('invalid');
-    }
-}
+    const input = document.getElementById("validation-input");
+
+    const totalLenght = input.getAttribute("data-length");
+    const intTotallenght = parseInt(totalLenght, 10);
+    
+    input.oninput = function() {
+      if (input.value.length === intTotallenght) {
+        input.classList.remove("invalid");
+        input.classList.add("valid");
+      }
+      if (input.value.length === 0) {
+        input.classList.remove("valid");
+        input.classList.remove("invalid");
+      }
+      if (input.value.length !== intTotallenght && input.value.length !== 0) {
+        input.classList.add("invalid");
+      }
+    };
